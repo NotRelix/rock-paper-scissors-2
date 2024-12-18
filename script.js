@@ -14,3 +14,18 @@ function getComputerChoice() {
     }
     return choice;
 }
+
+function getHumanChoice() {
+    let humanChoice = prompt('rock paper or scissors?');
+    let choice = '';
+    if (humanChoice === 'rock') {
+        choice = 'rock';
+    } else if (humanChoice === 'paper') {
+        choice = 'paper';
+    } else if (humanChoice === 'scissors') {
+        choice = 'scissors';
+    }
+    return choice;
+}
+
+console.log(getHumanChoice())
