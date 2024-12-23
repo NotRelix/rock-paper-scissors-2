@@ -16,7 +16,6 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let humanChoice = prompt('rock paper or scissors?').toLowerCase();
     let choice = '';
     if (humanChoice === 'rock') {
         choice = 'rock';
@@ -59,23 +58,20 @@ function printScore(humanScore, computerScore) {
     console.log(`Player(${humanScore}) vs Computer(${computerScore})`)
 }
 
-function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
+function playGame(e) {
+    const humanSelection = e.target.id
+    const computerSelection = getComputerChoice()
+    let winner = playRound(humanSelection, computerSelection);
 
-    for (let x = 0; x < 5; x++) {
-        const humanSelection = getHumanChoice()
-        const computerSelection = getComputerChoice()
-        let winner = playRound(humanSelection, computerSelection);
-
-        if (winner === 'human') {
-            humanScore++;
-        } else if (winner === 'computer') {
-            computerScore++;
-        }
-
-        printScore(humanScore, computerScore)
+    if (winner === 'human') {
+        humanScore++;
+    } else if (winner === 'computer') {
+        computerScore++;
     }
+
+    printScore(humanScore, computerScore)
 }
 
-playGame()
+let humanScore = 0;
+let computerScore = 0;
+document.addEventListener('click', playGame)
