@@ -69,9 +69,9 @@ function playGame(e) {
     }
 
     if (humanScore >= 5) {
-        overallWinner.textContent = `Congratulations, you win! do you want to play again?`
+        overallWinner.textContent = `Congratulations, you win!`
     } else if (computerScore >= 5) {
-        overallWinner.textContent = `Better luck next time! do you want to play again?`
+        overallWinner.textContent = `Better luck next time!`
     }
 
     changeScore()
