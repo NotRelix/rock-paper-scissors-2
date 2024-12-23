@@ -65,12 +65,18 @@ function playGame(e) {
 
     if (winner === 'human') {
         humanScore++;
+        display.textContent = `You won! ${humanSelection} vs ${computerSelection}`
     } else if (winner === 'computer') {
         computerScore++;
+        display.textContent = `You lost! ${humanSelection} vs ${computerSelection}`
+    } else {
+        display.textContent = `Tie! ${humanSelection} vs ${computerSelection}`
     }
 
     printScore(humanScore, computerScore)
 }
+
+const display = document.querySelector('.display');
 
 let humanScore = 0;
 let computerScore = 0;
